@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="default_mx_values">
+      <field name="name">Valores por defecto para facturación</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+      <xpath expr="//field[@name='property_payment_term_id']" position="after">
+	      <field name="forma_de_pago"/>
+	      <field name="uso_id"/>
+      </xpath>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="../addons13/default_mx_values.action_window">
+      <field name="name">../addons13/default_mx_values window</field>
+      <field name="res_model">../addons13/default_mx_values.../addons13/default_mx_values</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="../addons13/default_mx_values.action_server">
+      <field name="name">../addons13/default_mx_values server</field>
+      <field name="model_id" ref="model_../addons13/default_mx_values_../addons13/default_mx_values"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="../addons13/default_mx_values" id="../addons13/default_mx_values.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="../addons13/default_mx_values.menu_1" parent="../addons13/default_mx_values.menu_root"/>
+    <menuitem name="Menu 2" id="../addons13/default_mx_values.menu_2" parent="../addons13/default_mx_values.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="../addons13/default_mx_values.menu_1_list" parent="../addons13/default_mx_values.menu_1"
+              action="../addons13/default_mx_values.action_window"/>
+    <menuitem name="Server to list" id="../addons13/default_mx_values" parent="../addons13/default_mx_values.menu_2"
+              action="../addons13/default_mx_values.action_server"/>
+    -->
+  </data>
+</odoo>
